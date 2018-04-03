@@ -1,0 +1,61 @@
+/**
+ * CSS for styling the contact form
+ */
+.card-container {
+
+  @apply .flex .items-center .h-screen .w-full;
+
+  .card {
+
+    @apply .w-full .max-w-md .bg-white .rounded .shadow-lg .p-8 .m-4;
+
+    .card-icon {
+      @apply .text-center .mb-2;
+    }
+
+    .card-heading {
+      @apply .text-xl .text-center .font-bold .mb-4;
+    }
+
+    .card-subheading {
+      @apply .text-lg .text-center .mb-8;
+    }
+
+    .enquiry-label {
+      @apply .block .uppercase .tracking-wide .text-grey-darker .text-xs .font-bold .mb-2;
+    }
+
+    .enquiry-content {
+      @apply .block .w-full .bg-grey-lighter .text-grey-darker .py-3 .px-4 .text-sm .mb-4;
+    }
+
+  }
+
+  .form-group {
+
+    @apply .flex .flex-wrap .-mx-3 .mb-3;
+
+    .form-control {
+      @apply .w-full .px-3 .mb-3;
+    }
+
+  }
+
+  .form-input {
+    @apply .appearance-none .block .w-full .bg-grey-lighter .text-grey-darker .border .py-3 .px-4 .text-sm;
+  }
+
+  .form-error-message {
+    @apply .text-red .text-xs .italic .mt-2;
+  }
+
+}
+
+/**
+ * Responsive Styles
+ */
+@screen md {
+  .card-container {
+    @apply .max-w-md .mx-auto;
+  }
+}

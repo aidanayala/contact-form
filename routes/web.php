@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ViewsController@index');
+
+Route::post('/contact', 'ContactController@submit');
+
+Route::get('/enquiries', 'ViewsController@enquires');

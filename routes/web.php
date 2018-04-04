@@ -13,6 +13,7 @@
 
 Route::get('/', 'ViewsController@index');
 
-Route::post('/contact', 'ContactController@submit')->middleware(['honey']);
+// throttle the contact post route to 10 requests per minute
+Route::post('/contact', 'ContactController@submit')->middleware(['honey', 'throttle:10,1']);
 
 Route::get('/enquiries', 'ViewsController@enquires');

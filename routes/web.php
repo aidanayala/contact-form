@@ -13,6 +13,6 @@
 
 Route::get('/', 'ViewsController@index');
 
-Route::post('/contact', 'ContactController@submit');
+Route::post('/contact', 'ContactController@submit')->middleware(['honey']);
 
 Route::get('/enquiries', 'ViewsController@enquires');

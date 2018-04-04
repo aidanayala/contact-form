@@ -13,7 +13,8 @@ class ContactRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        // in-case csrf has somehow been bypassed, ensure request is from this server
+        return ($this->header('referer') == config('app.url'));
     }
 
     /**

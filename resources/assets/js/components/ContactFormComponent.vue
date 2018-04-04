@@ -5,9 +5,20 @@
         <!-- contact form -->
         <div v-show="!submitted" class="form-container animated fadeInDownBig">
             <form>
+
                 <div class="form-group">
                     <div class="form-control text-center">
                         <i class="text-blue fa fa-envelope fa-4x"></i>
+                    </div>
+                </div>
+                <div class="form-group form-honey">
+                    <div class="form-control">
+                        <!-- place honey trap at the top and autofocus on the correct "first" element, incase users use tab to navigate fields -->
+                        <label for="honey">
+                            If you can see this field, do not fill it in. It helps us stop spammers!
+                        </label>
+                        <input class="form-input" id="honey" autocomplete="off" name="honey" v-model="form.honey"
+                               placeholder="honey" value="">
                     </div>
                 </div>
                 <div class="form-group">
@@ -47,7 +58,9 @@
                 <div class="form-group">
                     <div class="form-control">
                         <button :disabled="state==1 || submitted==1" v-on:click="submit()" type="button">
-                            <span v-if="state==0">Send it!</span><i v-bind:class="[state == 0 ? 'fa-paper-plane' : 'fa-spinner fa-spin']" class="ml-2 fa"></i>
+                            <span v-if="state==0">Send it!</span><i
+                                v-bind:class="[state == 0 ? 'fa-paper-plane' : 'fa-spinner fa-spin']"
+                                class="ml-2 fa"></i>
                         </button>
                     </div>
                 </div>

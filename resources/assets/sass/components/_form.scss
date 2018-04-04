@@ -45,6 +45,10 @@
     @apply .text-red .text-xs .italic .mt-2;
   }
 
+  .form-honey {
+    @apply .appearance-none .honey-field;
+  }
+
 }
 
 /**

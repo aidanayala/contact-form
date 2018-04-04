@@ -3,13 +3,13 @@
 namespace App\Listeners;
 
 use App\Events\NewEnquiry;
-use App\Mail\EnquiryConfirmation;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Traits\SendsNewEnquiryEmails;
 use Illuminate\Support\Facades\Mail;
 
 class NewEnquiryFired
 {
+    use SendsNewEnquiryEmails;
+
     /**
      * Create the event listener.
      *
@@ -28,8 +28,6 @@ class NewEnquiryFired
      */
     public function handle(NewEnquiry $event)
     {
-        // send emails
-        Mail::to($event->enquiry->email)->send(new EnquiryConfirmation($event->enquiry));
-        Mail::to(config('app.admin_email'))->send(new \App\Mail\NewEnquiry($event->enquiry));
+        $this->sendMail($event->enquiry);
     }
 }

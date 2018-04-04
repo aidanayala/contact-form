@@ -15,7 +15,7 @@ class NewEnquiry
     public function __construct(Enquiry $enquiry)
     {
         //
-        $this->enquiry = $enquiry;
+         $this->enquiry = $enquiry;
     }
 
     public function broadcastOn()

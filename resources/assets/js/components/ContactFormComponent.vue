@@ -26,7 +26,7 @@
                         <label for="name">
                             Name
                         </label>
-                        <input class="form-input" id="name" type="text" placeholder="" autofocus v-model="form.name">
+                        <input class="form-input" id="name" type="text" name="name" placeholder="" autofocus v-model="form.name">
                         <p v-if="errors.name" class="form-error-message">
                             {{errors.name[0]}}
                         </p>
@@ -37,7 +37,7 @@
                         <label for="email">
                             E-mail Address
                         </label>
-                        <input class="form-input" id="email" type="email" placeholder="" v-model="form.email">
+                        <input class="form-input" id="email" type="email" name="email" placeholder="" v-model="form.email">
                         <p v-if="errors.email" class="form-error-message">
                             {{errors.email[0]}}
                         </p>
@@ -48,7 +48,7 @@
                         <label for="text">
                             Enquiry Text
                         </label>
-                        <textarea class="form-input" id="text" placeholder="" rows="5"
+                        <textarea class="form-input" id="text" name="text" placeholder="" rows="5"
                                   v-model="form.text"></textarea>
                         <p v-if="errors.text" class="form-error-message">
                             {{errors.text[0]}}

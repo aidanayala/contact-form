@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use App\Mail\EnquiryConfirmation;
 use App\Mail\NewEnquiry;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 /**
@@ -11,12 +12,13 @@ use Illuminate\Support\Facades\Mail;
  * Trait SendsNewEnquiryEmails
  * @package App\Traits
  */
-trait SendsNewEnquiryEmails {
+trait SendsNewEnquiryEmails
+{
 
     public function sendMail($enquiry)
     {
-        $this->sendNewEnquiryConfirmation($enquiry);
         $this->sendNewEnquiryNotification($enquiry);
+        $this->sendNewEnquiryConfirmation($enquiry);
     }
 
     private function sendNewEnquiryNotification($enquiry)
